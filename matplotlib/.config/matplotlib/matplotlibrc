@@ -1,0 +1,6 @@
+axes.grid : True
+
+grid.color       :   black   # grid color
+grid.linestyle   :   :       # dotted
+grid.linewidth   :   0.5     # in points
+grid.alpha       :   1.0     # transparency, between 0.0 and 1.0
