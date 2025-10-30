@@ -86,6 +86,8 @@ vim.lsp.config("fortls", {capabilities = capabilities, filetypes={"fortran"}})
 vim.lsp.enable("fortls")
 vim.lsp.config("clangd", {capabilities = capabilities, filetypes={"cpp"}})
 vim.lsp.enable("clangd")
+vim.lsp.config("lua-language-server", {capabilities = capabilities, filetypes={"lua"}})
+vim.lsp.enable("lua-language-server")
 require("mason").setup()
 
 local mason_lspconfig = require 'mason-lspconfig'
@@ -132,7 +134,6 @@ vim.keymap.set('n', '<leader>g', ':LazyGit <CR>', {})
 
 
 -- Startup commands
-vim.cmd([[NvimTreeOpen]])
 vim.cmd([[colorscheme catppuccin-mocha]])
 vim.cmd([[set termguicolors]])
 vim.cmd([[set cc=80]])
@@ -148,3 +149,4 @@ smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Ta
 imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 ]]
+vim.cmd([[NvimTreeOpen]])
