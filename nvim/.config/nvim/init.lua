@@ -114,6 +114,7 @@ require("nvim-web-devicons").refresh()
 require("yazi")
 
 
+vim.notify = require("notify")
 
 -- Keymaps
 vim.keymap.set('n', '<leader>sub', '/subroutine<CR>', {})
@@ -139,6 +140,7 @@ vim.cmd([[set termguicolors]])
 vim.cmd([[set cc=80]])
 vim.cmd([[set foldmethod=indent]])
 vim.cmd([[set nowrap]])
+vim.cmd([[set noswapfile]])
 vim.cmd([[set spell spelllang=en_us]])
 vim.cmd[[
 " Use Tab to expand and jump through snippets
