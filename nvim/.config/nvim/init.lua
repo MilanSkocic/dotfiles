@@ -114,7 +114,6 @@ require("nvim-web-devicons").refresh()
 require("yazi")
 
 
-vim.notify = require("notify")
 
 -- Keymaps
 vim.keymap.set('n', '<leader>sub', '/subroutine<CR>', {})
