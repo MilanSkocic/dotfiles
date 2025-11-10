@@ -1,6 +1,0 @@
-[font]
-normal = { family = "UbuntuMono Nerd Font", style = "regular"}
-size=14
-
-[general]
-import = ["~/.config/alacritty/themes/catpuccin-mocha/catppuccin-mocha.toml"]
