@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# DEFINE
+PROGNAME="postinstall"
+PROGVERSION="1.0"
+SHORTDESCRIPTION="Post install for Debian."
+HOMEPAGE=""
+LICENSE="MIT"
+MANSECTION="1"
+RED="\e[31m"
+BLACK="\e[0m"
+GREEN="\e[32m"
+
 DEB13="build-essential checkinstall autotools-dev make cmake
        libreadline-dev libncurses-dev libssl-dev libsqlite3-dev tk-dev 
        libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev liblzma-dev 
@@ -17,8 +28,60 @@ DEB13="build-essential checkinstall autotools-dev make cmake
        fonts-ubuntu fonts-ubuntu-console fonts-ubuntu-title"
 
 
+FLAG_LIST=0
+
+
+help () {
+    echo "NAME"
+    echo "    $PROGNAME($MANSECTION) - $SHORTDESCRIPTION"
+    echo ""
+
+    echo "SYNOPSIS"
+    echo "    $PROGNAME SUBCOMMAND [SUBCOMMAND_OPTIONS]" 
+    echo ""
+
+    echo "DESCRIPTION"
+    echo "   $PROGNAME install a list of predefined packages."
+    echo ""
+
+    echo "OPTIONS"
+    echo "   -v, --version        Display version."
+    echo "   -h, --help           Display help."
+    echo ""
+    
+    echo "SUBCOMMANDS"
+    echo "+debian13|13|trixie [OPTIONS]              Post installation for Debian 13 (trixie)."
+    echo "+debian14|14|trixie [OPTIONS]              Post installation for Debian 14 (forky)."
+    echo "+add <gcc|python> <version> <priority>     Add alternate for gcc or python."
+    echo ""
+    
+    echo "SUBCOMMANDS OPTIONS"
+    echo "  --list                                   List packages."
+#    echo ""
+
+}
+
+
+help_usage () {
+    echo "$PROGNAME:"
+    echo ""
+    echo "USAGE: $PROGNAME SUBCOMMAND [SUBCOMMAND_OPTIONS]"
+}
+
+version () {
+    echo "Version:      $PROGVERSION"
+    echo "Program:      $PROGNAME"
+    echo "Description:  $SHORTDESCRIPTION"
+    echo "Home Page:    $HOMEPAGE"
+    echo "License:      $LICENSE"
+    echo "OS Type:      $OSTYPE"
+}
+
 debian13 () {
     echo "Post install for debian 13 trixie..."
+    if [[ $1 == 1 ]]; then
+        echo $DEB13
+    fi
     sudo apt install -y $DEB13
     echo "Done."
     return 0
@@ -38,14 +101,28 @@ add_python () {
     sudo update-alternatives --install /usr/bin/python3 python /usr/local/bin/python$1 $2 --slave /usr/bin/pip3 pip /usr/local/bin/pip$1
 }
 
+args=$*
+for i in $args; do
+    if [[ "$i" == "--list" ]]; then
+        FLAG_LIST=1
+    fi
+done
 
 case $1 in
+    "--help"|"-h")
+        help 
+        exit 0
+        ;;
+    "--version"|"-v")
+        version
+        exit 0
+        ;;
     "debian13"|"13"|"trixie")
-        debian13
+        debian13 $FLAG_LIST
         exit 0
         ;;
     "debian14"|"14"|"forky")
-        debian14
+        debian14 $FLAG_LIST
         exit $?
         ;;
     "add")
@@ -61,6 +138,7 @@ case $1 in
         esac
         ;;
     *)
+        help_usage
         exit $?
         ;;
 esac
