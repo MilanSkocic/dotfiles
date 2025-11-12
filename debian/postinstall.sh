@@ -22,7 +22,7 @@ DEB13="build-essential checkinstall autotools-dev make cmake
        gcc-14 gfortran-14 \
        libopenblas0 libopenblas-dev \
        python3-pip python3-setuptools
-       neovim neomutt calcurse kitty \
+       neovim neomutt calcurse kitty tmux \
        graphviz imagemagick inkscape gimp dia geogebra texlive-full \
        stow btop htop fastfetch\
        fonts-ubuntu fonts-ubuntu-console fonts-ubuntu-title"
