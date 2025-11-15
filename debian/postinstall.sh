@@ -27,6 +27,8 @@ DEB13="build-essential checkinstall autotools-dev make cmake
        stow btop htop fastfetch\
        fonts-ubuntu fonts-ubuntu-console fonts-ubuntu-title"
 
+DEB14=$DEB13
+
 
 FLAG_LIST=0
 
@@ -89,6 +91,10 @@ debian13 () {
 
 debian14 () {
     echo "Post install for debian 14 forky..."
+    if [[ $1 == 1 ]]; then
+        echo $DEB14
+    fi
+    sudo apt install -y $DEB14
     echo "Done."
     return 0
 }
