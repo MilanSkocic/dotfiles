@@ -28,6 +28,10 @@ not work because **/etc/sudoers** is read-only even for root.
 
 Change %sudo with john and save.
 
+# Debian mini.iso
+
+Daily build for mini.iso available here https://d-i.debian.org/daily-images/amd64/daily/netboot/mini.iso
+
 # Debian upgrade
 Apply updates to the current version.
 
