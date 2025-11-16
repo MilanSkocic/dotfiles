@@ -113,7 +113,7 @@ export ARCHFLAGS="-arch $(uname -m)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(zoxide init zsh)"
-eval "$(oh-my-posh init zsh --config /home/mskocic/.cache/oh-my-posh/themes/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config /home/mskocic/.cache/oh-my-posh/themes/catppuccin_macchiato.omp.json)"
 #eval "$(oh-my-posh init zsh --config /home/mskocic/.cache/oh-my-posh/themes/kushal.omp.json)"
 #eval "$(oh-my-posh init zsh --config /home/milan/.cache/oh-my-posh/themes/montys.omp.json)"
 #eval "$(oh-my-posh init zsh --config /home/milan/.cache/oh-my-posh/themes/night-owl.omp.json)"
