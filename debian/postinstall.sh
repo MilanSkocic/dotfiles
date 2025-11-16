@@ -71,7 +71,6 @@ help () {
     echo "Add gcc/python alternative."
     echo "  > ./$PROGNAME.sh add gcc 15 100"
     echo "  > ./$PROGNAME.sh add pytthon 14 100"
-
 }
 
 
