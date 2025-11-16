@@ -12,20 +12,20 @@ BLACK="\e[0m"
 GREEN="\e[32m"
 
 DEB13="build-essential checkinstall autotools-dev make cmake
-       libreadline-dev libncurses-dev libssl-dev libsqlite3-dev tk-dev 
-       libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev liblzma-dev 
+       libreadline-dev libncurses-dev libssl-dev libsqlite3-dev tk-dev
+       libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev liblzma-dev
        libgdbm-compat-dev libnsl-dev
        git lazygit
-       gcc gfortran \
-       gcc-12 gfortran-12 \
-       gcc-13 gfortran-13 \
-       gcc-14 gfortran-14 \
-       libopenblas0 libopenblas-dev \
+       gcc gfortran
+       gcc-12 gfortran-12
+       gcc-13 gfortran-13
+       gcc-14 gfortran-14
+       libopenblas0 libopenblas-dev
        python3-pip python3-setuptools
-       neovim neomutt calcurse kitty tmux \
-       graphviz imagemagick inkscape gimp dia geogebra texlive-full \
-       stow btop htop fastfetch\
-       fonts-ubuntu fonts-ubuntu-console fonts-ubuntu-title"
+       neovim neomutt calcurse kitty tmux
+       stow btop htop fastfetch zoxide fzf
+       fonts-ubuntu fonts-ubuntu-console fonts-ubuntu-title
+       graphviz imagemagick inkscape gimp dia geogebra texlive-full"
 
 DEB14=$DEB13
 
@@ -59,14 +59,23 @@ help () {
     
     echo "SUBCOMMANDS OPTIONS"
     echo "  --list                                   List packages."
-#    echo ""
+    echo ""
+
+    echo "EXAMPLES"
+    echo "Install package for debian 13."
+    echo "  > ./$PROGNAME.sh 13" 
+    echo ""
+    echo "Install and list package for debian 13."
+    echo "  > ./$PROGNAME.sh 13 --list" 
+    echo ""
+    echo "Add gcc/python alternative."
+    echo "  > ./$PROGNAME.sh add gcc 15 100"
+    echo "  > ./$PROGNAME.sh add pytthon 14 100"
 
 }
 
 
 help_usage () {
-    echo "$PROGNAME:"
-    echo ""
     echo "USAGE: $PROGNAME SUBCOMMAND [SUBCOMMAND_OPTIONS]"
 }
 
@@ -100,6 +109,8 @@ debian14 () {
 }
 
 add_gcc () {
+    # $1: gcc version
+    # $2: priority
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-$1 $2 --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-$1 --slave /usr/bin/gcov gcov /usr/bin/gcov-$1
 }
 
@@ -144,6 +155,7 @@ case $1 in
         esac
         ;;
     *)
+        echo "Command $1 not recognized."
         help_usage
         exit $?
         ;;
