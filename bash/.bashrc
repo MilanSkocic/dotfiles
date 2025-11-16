@@ -139,6 +139,8 @@ export LIBRARY_PATH="$LD_LIBRARY_PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# pass
+export EDITOR="nvim"
 
 prog="batcat"
 if which $prog >/dev/null; then
