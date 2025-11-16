@@ -134,7 +134,7 @@ vim.keymap.set('n', '<leader>g', ':LazyGit <CR>', {})
 
 
 -- Startup commands
-vim.cmd([[colorscheme catppuccin-mocha]])
+vim.cmd([[colorscheme catppuccin-macchiato]])
 vim.cmd([[set termguicolors]])
 vim.cmd([[set cc=80]])
 vim.cmd([[set foldmethod=indent]])
