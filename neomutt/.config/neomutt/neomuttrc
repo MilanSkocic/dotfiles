@@ -8,8 +8,8 @@ set realname = "Milan Skocic"
 set imap_user = "milan.skocic@gmail.com"
 set smtp_url = "smtps://milan.skocic@smtp.gmail.com:465/"
 #set smtp_authenticators = 'gssapi:login'
-set imap_pass = "xawk cbmq nmlm xuyx"
-set smtp_pass = "xawk cbmq nmlm xuyx"
+set imap_pass = "zchj ldwn cuwp piah"
+set smtp_pass = "zchj ldwn cuwp piah"
 
 # Ensure TLS is enforced
 set ssl_starttls = yes
