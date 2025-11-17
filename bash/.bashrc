@@ -142,6 +142,10 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # pass
 export EDITOR="nvim"
 
+# texlive
+export TEXMFHOME="$HOME/.texmf"
+
+
 prog="batcat"
 if which $prog >/dev/null; then
     echo "$prog was found. Aliasing cat -> $prog"
