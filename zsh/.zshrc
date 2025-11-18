@@ -121,7 +121,7 @@ eval "$(oh-my-posh init zsh --config /home/mskocic/.cache/oh-my-posh/themes/catp
 
 source <(fzf --zsh)
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+if command -v tmux > /dev/null 2>&1 && [ -z "$TMUX" ]; then
   tmux attach-session -t default || tmux new-session -s default
 fi
 
