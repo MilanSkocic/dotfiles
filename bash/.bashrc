@@ -131,7 +131,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/.local/fiji"
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$HOME/.local/bin:$HOME/.local/fiji:$PATH"
 export C_INCLUDE_PATH="$C_INCLUDE_PATH:$HOME/.local/include"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
