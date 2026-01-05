@@ -145,6 +145,10 @@ export EDITOR="nvim"
 # texlive
 export TEXMFHOME="$HOME/.texmf"
 
+# MAN INFO
+export MANPATH="$HOME/.local/share/man:$MANPATH"
+export INFOPATH="$HOME/.local/share/info:$INFOPATH"
+
 
 prog="batcat"
 if which $prog >/dev/null; then
