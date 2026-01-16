@@ -113,14 +113,14 @@
 ## ***************************************************************************
 ## See https://matplotlib.org/stable/api/artist_api.html#module-matplotlib.lines
 ## for more information on line properties.
-lines.linewidth: 1               # line width in points
+#lines.linewidth: 1.5               # line width in points
 lines.linestyle: None                 # solid line
 #lines.color:     C0                # has no affect on plot(); see axes.prop_cycle
 lines.marker:          .        # the default marker
 #lines.markerfacecolor: auto        # the default marker face color
 #lines.markeredgecolor: auto        # the default marker edge color
 #lines.markeredgewidth: 1.0         # the line width around the marker symbol
-lines.markersize:      4          # marker size, in points
+lines.markersize:      6           # marker size, in points
 #lines.dash_joinstyle:  round       # {miter, round, bevel}
 #lines.dash_capstyle:   butt        # {butt, round, projecting}
 #lines.solid_joinstyle: round       # {miter, round, bevel}
@@ -356,7 +356,7 @@ lines.markersize:      4          # marker size, in points
                         # 'stixsans'] when a symbol cannot be found in one of the
                         # custom math fonts. Select 'None' to not perform fallback
                         # and replace the missing character by a dummy symbol.
-#mathtext.default: it  # The default font to use for math.
+mathtext.default: rm  # The default font to use for math.
                        # Can be any of the LaTeX font names, including
                        # the special name "regular" for the same font
                        # used in regular text.
@@ -381,7 +381,7 @@ axes.grid:          True   # display grid or not
                              # text.color as default value
 #axes.titley:        None    # position title (axes relative units).  None implies auto
 #axes.titlepad:      6.0     # pad between axes and title in points
-#axes.labelsize:     medium  # font size of the x and y labels
+#axes.labelsize:     16  # font size of the x and y labels
 #axes.labelpad:      4.0     # space between label and axis
 #axes.labelweight:   normal  # weight of the x and y labels
 #axes.labelcolor:    black
@@ -532,7 +532,7 @@ axes.grid:          True   # display grid or not
 ## ***************************************************************************
 #grid.color:     "#b0b0b0"  # grid color
 grid.linestyle: :          # solid
-grid.linewidth: 0.5        # in points
+#grid.linewidth: 0.8        # in points
 #grid.alpha:     1.0        # transparency, between 0.0 and 1.0
 
 
@@ -572,7 +572,7 @@ grid.linewidth: 0.5        # in points
 #figure.titleweight: normal    # weight of the figure title
 #figure.labelsize:   large     # size of the figure label (``Figure.sup[x|y]label()``)
 #figure.labelweight: normal    # weight of the figure label
-#figure.figsize:     6.4, 4.8  # figure size in inches
+figure.figsize:     6,4  # figure size in inches
 #figure.dpi:         100       # figure dots per inch
 #figure.facecolor:   white     # figure face color
 #figure.edgecolor:   white     # figure edge color
@@ -639,7 +639,7 @@ grid.linewidth: 0.5        # in points
 ## ***************************************************************************
 ## * ERRORBAR PLOTS                                                          *
 ## ***************************************************************************
-#errorbar.capsize: 0  # length of end cap on error bars in pixels
+errorbar.capsize: 2  # length of end cap on error bars in pixels
 
 
 ## ***************************************************************************
@@ -698,7 +698,7 @@ grid.linewidth: 0.5        # in points
 ## The default savefig parameters can be different from the display parameters
 ## e.g., you may want a higher resolution, or to make the figure
 ## background white
-#savefig.dpi:       figure      # figure dots per inch or 'figure'
+savefig.dpi:       300      # figure dots per inch or 'figure'
 #savefig.facecolor: auto        # figure face color when saving
 #savefig.edgecolor: auto        # figure edge color when saving
 #savefig.format:    png         # {png, ps, pdf, svg}
