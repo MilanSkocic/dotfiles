@@ -131,7 +131,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$HOME/.local/bin:$HOME/.local/fiji:$PATH"
+#export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$HOME/.local/bin:$HOME/.local/fiji:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.local/fiji:$PATH"
 export C_INCLUDE_PATH="$C_INCLUDE_PATH:$HOME/.local/include"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
@@ -149,6 +150,11 @@ export TEXMFHOME="$HOME/.texmf"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 export INFOPATH="$HOME/.local/share/info:$INFOPATH"
 export MANPAGER="nvim +Man!"
+export MANWIDTH=72
+
+# DEBIAN
+export DEBFULLNAME="Milan Skocic"
+export DEBEMAIL="milan.skocic@gmail.com"
 
 prog="batcat"
 if which $prog >/dev/null; then
