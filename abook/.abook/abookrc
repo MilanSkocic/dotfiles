@@ -1,0 +1,9 @@
+# Show all email addresses in list
+set show_all_emails=true
+
+# colors
+set use_colors = true
+set color_header_fg = red
+set color_header_bg = default
+set color_list_header_fg = blue
+set color_list_header_bg = default
